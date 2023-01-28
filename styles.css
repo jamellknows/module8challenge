@@ -1,0 +1,65 @@
+.weather-header{
+
+}
+
+input{
+    margin-top: 1px;
+    padding: 3px;
+    line-height: 1.5;
+    border: 1px solid black;
+}
+.half-rule{
+    border: 0;
+    border-top: solid 1px rgba(0,0,0,0.5) ;
+}
+.btn{
+    width: 100%;
+    margin-top: 5px;
+}
+hr{
+    margin-left: 0;
+    margin-right: 0;
+}
+.btn.gradient{
+    /* From https://css.glass */
+background: rgba(50, 32, 221, 0.8);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.7px);
+-webkit-backdrop-filter: blur(8.7px);
+border: 1px solid rgba(50, 32, 221, 0.91);
+}
+
+.btn.solid{
+/* From https://css.glass */
+background: rgba(177, 182, 182, 0.81);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid rgba(177, 182, 182, 0.91);
+margin-bottom: 10px;
+}
+
+.btn.gradient:hover, .btn.gradient:focus{
+    /* From https://css.glass */
+background: rgba(255, 255, 255, 0.51);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.7px);
+-webkit-backdrop-filter: blur(8.7px);
+border: 1px solid rgba(255, 255, 255, 0.91);
+}
+
+.btn.solid:hover, .btn.solid:focus{
+    /* From https://css.glass */
+background: rgba(177, 182, 182, 0.81);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(0.3px);
+-webkit-backdrop-filter: blur(0.3px);
+border: 1px solid rgba(177, 182, 182, 0.91);
+}
+
+.currentWeather{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    margin-top: 10px;
+}
