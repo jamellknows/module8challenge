@@ -62,4 +62,10 @@ border: 1px solid rgba(177, 182, 182, 0.91);
     flex-direction: column;
     border: 2px solid black;
     margin-top: 10px;
+    width: 755px;
 }
+
+.search-for-a-city{
+    font-size: 24px;
+}
+
