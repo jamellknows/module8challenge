@@ -8,7 +8,6 @@ if(previousSearches == null)
     console.log("new storage")
     previousSearches = []
 }
-console.log(previousSearches)
 
 
 $('#search-button').click(function(){
@@ -92,11 +91,8 @@ $('#search-button').click(function(){
                 let cityName = String(data.name)
                 let previousCurrent = [cityName, data]
                 previousElem.push(previousCurrent)
-                console.log(typeof previousCurrent)
-                console.log(previousElem)
-                console.log(typeof previousSearches)
+                previousElem = [previousElem]
                 previousSearches = previousSearches.concat(previousElem)
-                // $.merge(previousSearches, previousElem)
                 localStorage.setItem("previousSearches", JSON.stringify(previousSearches))
                 console.log(previousSearches)
 
@@ -109,21 +105,8 @@ $('#search-button').click(function(){
         }).then(function(){
             console.log("ran")
         })
-        //Save data to previous
 
-
-
-
-
-
-
-        // $(data).each(function(index){
-        //     console.log(data[index])
-        // })
        })
     })
 })
 
-function previousResults(){
-
-}
