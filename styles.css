@@ -1,3 +1,12 @@
+
+html{
+    height: 100%;
+}
+
+body{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 .weather-header{
 
 }
@@ -63,9 +72,23 @@ border: 1px solid rgba(177, 182, 182, 0.91);
     border: 2px solid black;
     margin-top: 10px;
     width: 755px;
+    height: 200px
 }
 
 .search-for-a-city{
     font-size: 24px;
+}
+
+#forecast1, #forecast10, #forecast19, #forecast28, #forecast37 {
+    background-color: darkblue;
+    color: #fff;
+    border:rgba(0, 0, 0, 0.1);
+    margin-right: 16px;
+}
+
+.forecasts-div{
+    width: 125%;
+    margin-left: -20px;
+    
 }
 

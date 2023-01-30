@@ -23,31 +23,36 @@
         Search
       </button>
       <hr class="half-rule">
-      <button type="button" class="btn solid" data-index="1">placeholder</button>
-      <button type="button" class="btn solid" data-index="2">placeholder</button>
-      <button type="button" class="btn solid" data-index="3">placeholder</button>
-      <button type="button" class="btn solid" data-index="4">placeholder</button>
-      <button type="button" class="btn solid" data-index="5">placeholder</button>
-      <button type="button" class="btn solid" data-index="6">placeholder</button>
+      
+      <button type="button" class="btn solid previousbutton" data-index="1">placeholder</button>
+      <button type="button" class="btn solid previousbutton" data-index="2">placeholder</button>
+      <button type="button" class="btn solid previousbutton" data-index="3">placeholder</button>
+      <button type="button" class="btn solid previousbutton" data-index="4">placeholder</button>
+      <button type="button" class="btn solid previousbutton" data-index="5">placeholder</button>
+      <button type="button" class="btn solid previousbutton" data-index="6">placeholder</button>
+    
     </div>
     <div class=" col-lg-8">
-      <div class="h-50 row currentWeather">
+      <div class=" row currentWeather">
         <h3 id="city"></h3>
-        <p id ="temp"></p>
-        <p id ="wind"></p>
-        <p id ="humidity"></p>
-        
+        <ul id="results-list">
+          <li id ="temp"></li>
+          <li id="wind"></li>
+          <li id="humidity"></li>
+        </ul>
+       
       </div>
       <div class="d-flex flex-column forecast">
         <div class="">
           <h5>5-Day Forecast</h5>
         </div>
-        <div class="d-flex flex-row">
-        <div class="d-flex col-lg-2" id="forecast1"></div>
-        <div class="d-flex col-lg-2" id="forecast10"></div>
-        <div class="d-flex col-lg-2" id="forecast19"></div>
-        <div class="d-flex col-lg-2" id="forecast28"></div>
-        <div class="d-flex col-lg-2" id="forecast37"></div>
+        <div class="d-flex flex-row forecasts-div">
+          <div class="d-flex col-lg-2" id="forecast1"></div>
+          <div class="d-flex col-lg-2" id="forecast10"></div>
+          <div class="d-flex col-lg-2" id="forecast19"></div>
+          <div class="d-flex col-lg-2" id="forecast28"></div>
+          <div class="d-flex col-lg-2" id="forecast37"></div>
+        </div>
       </div>
     </div>
     </div>
