@@ -1,6 +1,7 @@
 const API_KEY = "cc67b19dc916f461ab3e7d8d3c68bb27"
 
 
+
 let previousSearches = JSON.parse(localStorage.getItem('previousSearches'))
 $('#results-list').hide()
 if(previousSearches == null)
@@ -9,10 +10,14 @@ if(previousSearches == null)
     previousSearches = []
 }
 
+if(previousSearches.length > 5){
+  previousSearches = previousSearches.splice(previousSearches.length-5)
+}
+let previousBoolean = false
 let city_name;
 var clear;
     
-   let search =  function(city_name){
+   let search =  function(city_name, previousBoolean=false){
     event.preventDefault()
     clear()
     $('#forecast').empty()
@@ -23,7 +28,7 @@ var clear;
     Moment.format('Do MMMM')
     let date = String(Moment._d).slice(0,15)
     let previousElem = []
-    if(city_name == null){
+    if(previousBoolean == false){
         city_name = $('#search-input').val().trim()
     }
     let cityQuery =`http://api.openweathermap.org/geo/1.0/direct?q=${city_name}&limit=5&appid=${API_KEY}`
@@ -42,7 +47,6 @@ var clear;
         method: "GET",
         success: function(data){
             // Forecast
-            // console.log(data)
             let Moment = moment()
             Moment.format('Do MMMM')
             let date = String(Moment._d).slice(0,15)
@@ -54,13 +58,12 @@ var clear;
                let forecastTime = date
                let icon = data.list[i].weather[0].icon
                console.log(icon) 
-                // console.log(forecastTemp + " " + forecastHumidity + " " + forecastWind)
                 let forecastTemplate = `<div class="forecastEl">
                                         <p class="result">` + forecastTime + ` </p>
                                         <img style="width:'2px;height: '2px';" alt ="weather" src="http://openweathermap.org/img/wn/${icon}@2x.png">
-                                        <p class="result">`+ forecastTemp + ` ℃ </p>
-                                         <p class="result">` + forecastHumidity + `%</p>
-                                        <p class="result"> `+ forecastWind + ` m/s </p>
+                                        <p class="result"> Temp: `+ forecastTemp + ` ℃ </p>
+                                         <p class="result"> Humidity: ` + forecastHumidity + `%</p>
+                                        <p class="result"> Wind Speed: `+ forecastWind + ` m/s </p>
                                         </div>`
                 let forecastId = $("#forecast"+String(i)) 
                 
@@ -95,12 +98,10 @@ var clear;
             url: currentQuery,
             method: "GET",
             success: function(data){
-                // console.log(data)
                 let currentTemp = (data.main.temp-273.15).toFixed(2)
                 let currentHumidity = data.main.humidity 
                 let currentWind = data.wind.speed
                 let icon = data.weather[0].icon
-                // console.log(icon)
                 $('#city').append(`<img alt ="weather" src="http://openweathermap.org/img/wn/${icon}@2x.png">`)
                 $('#temp').text(`Temp: ${currentTemp} ℃ `)
                 $('#humidity').text(`Humidity: ${currentHumidity}%`)
@@ -113,6 +114,7 @@ var clear;
                 previousElem = [previousElem]
                 previousSearches = previousSearches.concat(previousElem)
                 localStorage.setItem("previousSearches", JSON.stringify(previousSearches))
+               
 
 
 
@@ -121,7 +123,7 @@ var clear;
 
             }
         }).then(function(){
-            console.log("ran")
+            
             
         })
 
@@ -137,7 +139,7 @@ $('.previousbutton').click(function(){
     clear()
     let index = $(this).attr('data-index')
     let searchCity = previousSearches[index][1][0]
-    search(searchCity)
+    search(searchCity, previous=true)
     // for the length of the data 
     
    
@@ -146,13 +148,24 @@ $('.previousbutton').click(function(){
 
     
 })
+function previousDisplay(){
+    if(previousSearches.length > 0){
+        $('.previousbutton').each(function(){
+            let index = $(this).attr('data-index')-1
+            let length = previousSearches.length
+            if(index < length){
+                $(this).show()
+                let searchCity = previousSearches[index][1][0]
+                $(this).text(searchCity)
+            }
+            
+        })
+    }
 
+}
+$('#search-button').click(previousDisplay)
+$(document).ready(previousDisplay)
 
-$('.previousbutton').each(function(){
-    let index = $(this).attr('data-index')
-    let searchCity = previousSearches[index][1][0]
-    $(this).text(searchCity)
-})
 clear = function(){
     $('#city').empty()
     $('#city').text("")

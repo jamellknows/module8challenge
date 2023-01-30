@@ -1,6 +1,8 @@
 
 html{
     height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 body{
@@ -8,6 +10,8 @@ body{
     overflow-x: hidden;
 }
 .weather-header{
+    background: rgb(2,0,36);
+background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 54%, rgba(0,212,255,1) 100%);
 
 }
 
@@ -16,6 +20,10 @@ input{
     padding: 3px;
     line-height: 1.5;
     border: 1px solid black;
+    height: 70px;
+}
+input[type="text"]{
+    font-size: 25px;
 }
 .half-rule{
     border: 0;
@@ -66,12 +74,16 @@ backdrop-filter: blur(0.3px);
 border: 1px solid rgba(177, 182, 182, 0.91);
 }
 
+.previousbutton{
+    display: none;
+}
+
 .currentWeather{
     display: flex;
     flex-direction: column;
     border: 2px solid black;
     margin-top: 10px;
-    width: 755px;
+    width: 111.5%;
     height: 200px
 }
 
