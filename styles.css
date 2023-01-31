@@ -264,6 +264,8 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 
    .currentWeather{
     width: 434px;
+    border: 1px solid black;
+
    }
 
    .search-for-a-city{
@@ -303,6 +305,8 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     .currentWeather{
         width: 275px;
         height: 335px;
+        border: 1px solid black;
+
     }
 
     .previousbutton{
@@ -364,6 +368,8 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 
     .currentWeather{
         width: 206px;
+        border: 1px solid black;
+
     }
 
     hr{
