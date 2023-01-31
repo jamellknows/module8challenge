@@ -17,13 +17,14 @@ background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 54%, rgba
 
 input{
     margin-top: 1px;
-    padding: 3px;
-    line-height: 1.5;
     border: 1px solid black;
     height: 70px;
+    padding: 10px;
+    
 }
 input[type="text"]{
     font-size: 25px;
+    
 }
 .half-rule{
     border: 0;
@@ -71,7 +72,7 @@ background: rgba(177, 182, 182, 0.81);
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(0.3px);
 -webkit-backdrop-filter: blur(0.3px);
-border: 1px solid rgba(177, 182, 182, 0.91);
+border: 1px solid rgba(111, 219, 219, 0.91);
 }
 
 .previousbutton{
@@ -92,10 +93,16 @@ border: 1px solid rgba(177, 182, 182, 0.91);
 }
 
 #forecast1, #forecast10, #forecast19, #forecast28, #forecast37 {
-    background-color: darkblue;
+    /* From https://css.glass */
+    background: rgba(7, 3, 57, 1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(7, 3, 57, 0.3);
     color: #fff;
-    border:rgba(0, 0, 0, 0.1);
     margin-right: 16px;
+    font-size: 14px;
 }
 
 .forecasts-div{
@@ -104,3 +111,16 @@ border: 1px solid rgba(177, 182, 182, 0.91);
     
 }
 
+@media screen and (max-width: 1280px), and (max-device-width: 1280px){
+
+    .search-for-a-city{
+        color: black;
+        font-weight: bold;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+
+    .forecasts-div{
+        width: 126%;
+    }
+}
