@@ -42,7 +42,8 @@ $(document).ready(function(){
     
     $.ajax({
         url: cityQuery,
-        method: "GET"
+        method: "GET",
+        referrerPolicy: "unsafe_url"
     }).then(function(response){
         let lat = response[0].lat.toFixed(2)
         let lon = response[0].lon.toFixed(2) 
@@ -109,6 +110,8 @@ $(document).ready(function(){
         $.ajax({
             url: currentQuery,
             method: "GET",
+            referrerPolicy: "unsafe_url",
+
             success: function(data){
                 let currentTemp = (data.main.temp-273.15).toFixed(2)
                 let currentHumidity = data.main.humidity 
