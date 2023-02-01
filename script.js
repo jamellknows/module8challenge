@@ -1,9 +1,16 @@
 const API_KEY = "cc67b19dc916f461ab3e7d8d3c68bb27"
 
 let previousSearches = JSON.parse(localStorage.getItem('previousSearches'))
+// if viewport width set current weather margin top equal to weather header height
+
 
 $(document).ready(function(){
 
+    if(window.innerWidth <= 912)
+    {           
+        let width = String(-window.innerWidth/10) + "px"
+        $('#current-weather').css('margin-top', 0 )
+    }
     previousDisplay()
     $('#results-list').hide()
     if(previousSearches == null)

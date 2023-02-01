@@ -12,6 +12,7 @@ body{
 .weather-header{
     background: rgb(2,0,36);
 background: linear-gradient(270deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 54%, rgba(0,212,255,1) 100%);
+height: 100%;
 
 }
 
@@ -84,7 +85,7 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     flex-direction: column;
     border: 2px solid black;
     margin-top: 10px;
-    width: 111.5%;
+    width: 100%;
     height: 200px
 }
 
@@ -188,10 +189,9 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     }
 
     .currentWeather{
-        width: 50%;
-        float: right;
-        margin-top: -380px;
+       position: relative;
         height: 370px;
+        
           
     }
 
@@ -222,10 +222,16 @@ border: 1px solid rgba(111, 219, 219, 0.91);
         overflow-y: scroll;
     }
     .currentWeather{
-        width: 415px;
+
+        width: 400px;
+        position: relative;
+        top: -385px;
+        left: 432px;
         
-        float: right;
         
+    }
+    .forecast{
+        margin-top: -300px;
     }
 
     .forecasts-div{
@@ -265,6 +271,8 @@ border: 1px solid rgba(111, 219, 219, 0.91);
    .currentWeather{
     width: 434px;
     border: 1px solid black;
+    position: relative;
+    top: -380px;
 
    }
 
@@ -311,11 +319,6 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 
     .previousbutton{
         width: 255px;
-
-        
-        
-    
-
        
     }
 
@@ -369,6 +372,12 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     .currentWeather{
         width: 206px;
         border: 1px solid black;
+        position: absolute;
+        top: -450px;
+        left: 250px;
+
+
+
 
     }
 
@@ -391,7 +400,7 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 }
 
 
-@media screen and (max-width: 390px), and (max-device-width: 390px){
+@media screen and (max-width: 393px), and (max-device-width: 393px){
 
     input{
         width: 190px;
@@ -413,5 +422,21 @@ border: 1px solid rgba(111, 219, 219, 0.91);
         height: 355px;
     }
 
+
+}
+
+@media screen and (max-width: 360px), and (max-device-width: 360px){
+.currentWeather{
+    left: 230px;
+    width: 160px;
+}
+
+#temp, #wind, #humidity{
+    font-size: 16px;
+}
+
+#city{
+    font-size: 18px;
+}
 
 }
