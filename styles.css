@@ -422,10 +422,16 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     }
 
     .currentWeather{
-        height: 355px;
+        height: 130px;
         position: relative;
         top: -130px;
         right: 200px;
+        width: 150px;
+    }
+
+    .forecast{
+        position: relative;
+        top: -120px;
     }
 
 
