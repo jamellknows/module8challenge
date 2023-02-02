@@ -81,8 +81,7 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 }
 
 .currentWeather{
-    display: flex;
-    flex-direction: column;
+    display: block;
     border: 2px solid black;
     margin-top: 10px;
     width: 100%;
@@ -424,6 +423,9 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 
     .currentWeather{
         height: 355px;
+        position: relative;
+        top: -130px;
+        right: 200px;
     }
 
 
