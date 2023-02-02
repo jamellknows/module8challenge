@@ -85,7 +85,7 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     border: 2px solid black;
     margin-top: 10px;
     width: 100%;
-    height: 200px
+    height: 200px;
 }
 
 .search-for-a-city{
@@ -166,6 +166,10 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     #results-list{
         list-style:circle;
     }
+
+    .currentWeather{
+        border: 2px solid black;
+    }
 }
 
 @media screen and (max-width: 912px), and (max-device-width: 912px){
@@ -190,8 +194,8 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     .currentWeather{
        position: relative;
         height: 370px;
-        
-          
+        border: 2px solid black;
+ 
     }
 
     #city{
@@ -226,6 +230,7 @@ border: 1px solid rgba(111, 219, 219, 0.91);
         position: relative;
         top: -385px;
         left: 432px;
+        border: 2px solid black;
         
         
     }
@@ -268,10 +273,12 @@ border: 1px solid rgba(111, 219, 219, 0.91);
    }
 
    .currentWeather{
-    width: 434px;
-    border: 1px solid black;
+    width: 234px;
+    border: 2px solid black;
+    height: 200px;
     position: relative;
-    top: -380px;
+    top: -150px;
+    right: 40px;
 
    }
 
@@ -289,6 +296,11 @@ border: 1px solid rgba(111, 219, 219, 0.91);
    }
    .forecasts-div{
     margin-top: -10px;
+   }
+
+   .forecast{
+    position: relative;
+    top: 120px;
    }
 
 
@@ -311,11 +323,11 @@ border: 1px solid rgba(111, 219, 219, 0.91);
 
     .currentWeather{
         width: 275px;
-        height: 335px;
-        border: 1px solid black;
+        height: 145px;
+        border: 2px solid black;
         position: relative;
         left: 279px;
-        top: -418px;
+        top: -138px;
 
     }
 
@@ -341,6 +353,12 @@ border: 1px solid rgba(111, 219, 219, 0.91);
     }
      #humidity, #wind, #temp{
         font-size: 18px ;
+    }
+
+    .forecast{
+        position: relative;
+        top: 200px;
+
     }
 
 
